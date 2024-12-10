@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { StudentService } from '../../model/student-service';
+import { StudentService } from '../../model/students/student-service';
 import { RouterModule } from '@angular/router';
-import { StudentDetails } from '../../model/student-details';
+import { StudentDetails } from '../../model/students/student-details';
 import { StudentDetailsComponent } from '../student-details/student-details.component';
 import { Observable } from 'rxjs';
 

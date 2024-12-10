@@ -7,7 +7,7 @@ import { HouseRankingDto } from "./house-ranking-dto";
 @Injectable({
     providedIn: 'root'
 })
-export class HouseService{
+export class HouseService {
     constructor(private http: HttpClient) { }
     getHouseDetails(): Observable<HouseRankingDto> {
         return this.http.get<HouseRankingDto>("http://localhost:8080/ranking");

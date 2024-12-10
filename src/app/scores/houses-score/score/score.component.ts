@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { HouseDetails } from '../../model/house-details';
-import { HouseService } from '../../model/house-service';
+import { HouseDetails } from '../../../model/houses/house-details';
+import { HouseService } from '../../../model/houses/house-service';
 import { RouterModule } from '@angular/router';
 import { ScoreDetailsComponent } from "../score-details/score-details.component";
 import { Observable } from 'rxjs';
-import { HouseRankingDto } from '../../model/house-ranking-dto';
+import { HouseRankingDto } from '../../../model/houses/house-ranking-dto';
 
 @Component({
   selector: 'app-score',
