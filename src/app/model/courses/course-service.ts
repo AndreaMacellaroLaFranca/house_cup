@@ -7,14 +7,13 @@ import { HttpConfig } from "../../config/http-config";
 @Injectable({
     providedIn: 'root'
 })
-
 export class CourseService{
     private urlExtension: string = 'api/course';
+
     constructor(private http: HttpClient){}
 
     getCourses(): Observable<CourseDto[]> {
-        let pars = new HttpParams();
-        pars.set('active', true);
+        let pars = new HttpParams().set('active', 'true'); 
         return this.http.get<CourseDto[]>(`${HttpConfig.apiUrl}/${this.urlExtension}`, { params: pars });
     }
 }
