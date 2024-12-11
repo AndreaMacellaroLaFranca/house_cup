@@ -1,7 +1,10 @@
 @if(studentDetails){
+    <div>
+        <button routerLink="/student/newStudent">Create new student</button>
+    </div>
     <div id="studentContainer">
-    @for (student of studentDetails; track $index) {
-    <app-student-details [detail]="student"></app-student-details>
+        @for (student of studentDetails; track $index) {
+            <app-student-details [detail]="student"></app-student-details>
     }
 </div>
 }

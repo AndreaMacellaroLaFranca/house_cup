@@ -1,1 +1,60 @@
-<p>student-add-form works!</p>
+<form (ngSubmit)="onSubmit()" [formGroup]="studentForm">
+  <div>
+    <label for="firstname">Firstname:</label>
+    <input type="text" id="firstname" formControlName="firstName">
+  </div>
+
+  <div>
+    <label for="surname">Surname:</label>
+    <input type="text" id="surname" formControlName="lastName">
+  </div>
+
+  <div>
+    <label for="dob">Date of birth:</label>
+    <input type="date" id="dob" formControlName="dob">
+  </div>
+
+  <div>
+    <label for="sex">Sex:</label>
+    <select id="sex" formControlName="sex">
+      <option value="M">Male</option>
+      <option value="F">Female</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="mail">Email:</label>
+    <input type="email" id="mail" formControlName="mail">
+  </div>
+
+  <div>
+    <label for="phone">Phone number:</label>
+    <input type="tel" id="phone" formControlName="phone">
+  </div>
+
+  <div>
+    <label for="background">Background:</label>
+    <input type="text" id="background" formControlName="background">
+  </div>
+
+  <div>
+    <label for="education">Education:</label>
+    <input type="text" id="education" formControlName="education">
+  </div>
+
+  <div>
+    <label for="course">Course:</label>
+    <select id="course" formControlName="course">
+      <option *ngFor="let course of courses" [value]="course.id">{{ course.className }}</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="house">House:</label>
+    <select id="house" formControlName="house">
+      <option *ngFor="let house of houses" [value]="house.id">{{ house.name }}</option>
+    </select>
+  </div>
+
+  <button type="submit">Submit</button>
+</form>

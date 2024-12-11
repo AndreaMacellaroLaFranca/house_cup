@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentService } from '../../model/students/student-service';
 import { RouterModule } from '@angular/router';
-import { StudentDetails } from '../../model/students/student-details';
+import { Studentsummary } from '../../model/students/student-summary';
 import { StudentDetailsComponent } from '../student-details/student-details.component';
 import { Observable } from 'rxjs';
 
@@ -14,13 +14,13 @@ import { Observable } from 'rxjs';
 
 export class StudentListComponent implements OnInit {
 
-  studentDetails!: StudentDetails[];
+  studentDetails!: Studentsummary[];
 
   constructor(private studentService: StudentService) {
   }
 
   ngOnInit(): void {
-    let osd: Observable<StudentDetails[]> = this.studentService.getStudentDetails();
+    let osd: Observable<Studentsummary[]> = this.studentService.getStudentDetails();
     osd.subscribe({
       next: sts => this.studentDetails = sts,
       error: err => console.log(err)

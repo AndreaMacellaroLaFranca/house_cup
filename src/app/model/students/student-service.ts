@@ -1,21 +1,21 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { StudentDetails } from "./student-details";
+import { Studentsummary } from "./student-summary";
 import { HttpConfig } from "../../config/http-config";
-import { StudentDetailsPlus } from "./student-details-plus";
+import { StudentDetails } from "./student-details";
 @Injectable({
     providedIn: 'root'
 })
 export class StudentService {
     private urlExtension: string = "/student"
     constructor(private http: HttpClient) { }
-    getStudentDetails(): Observable<StudentDetails[]> {
-        return this.http.get<StudentDetails[]>(`${HttpConfig.apiUrl}${this.urlExtension}`);
+    getStudentDetails(): Observable<Studentsummary[]> {
+        return this.http.get<Studentsummary[]>(`${HttpConfig.apiUrl}${this.urlExtension}`);
     }
 
-    getStudentDetailsPlus(id: number): Observable<StudentDetailsPlus> {
-        return this.http.get<StudentDetailsPlus>(`${HttpConfig.apiUrl}${this.urlExtension}/${id}`)
+    getStudentDetailsPlus(id: number): Observable<Studentsummary> {
+        return this.http.get<Studentsummary>(`${HttpConfig.apiUrl}${this.urlExtension}/${id}`)
     }
     
 

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { StudentDetails } from '../../model/students/student-details';
+import { Studentsummary } from '../../model/students/student-summary';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -13,7 +13,7 @@ export class StudentDetailsComponent {
   @Input({
     required: true
   })
-  detail: StudentDetails | null = null;
+  detail: Studentsummary | null = null;
 
   // @Output()
   // chooseStudentEvent = new EventEmitter<StudentDetails>();
