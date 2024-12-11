@@ -8,7 +8,7 @@ import { StudentDetailsPlus } from "./student-details-plus";
     providedIn: 'root'
 })
 export class StudentService {
-    private urlExtension: string = "/students"
+    private urlExtension: string = "/student"
     constructor(private http: HttpClient) { }
     getStudentDetails(): Observable<StudentDetails[]> {
         return this.http.get<StudentDetails[]>(`${HttpConfig.apiUrl}${this.urlExtension}`);

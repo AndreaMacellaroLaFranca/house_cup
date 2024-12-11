@@ -15,6 +15,6 @@ export class CourseService{
     getCourses(): Observable<CourseDto[]> {
         let pars = new HttpParams();
         pars.set('active', true);
-        return this.http.get<CourseDto[]>(`${HttpConfig.apiUrl}`, {params: pars});
+        return this.http.get<CourseDto[]>(`${HttpConfig.apiUrl}/${this.urlExtension}`, { params: pars });
     }
 }
